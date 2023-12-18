@@ -6,7 +6,7 @@ const BookList = () => {
   const navigate = useNavigate();
 
   useEffect(() => {
-    fetch(https://eak022.github.io/data_json/db.json/book") // เรียกใช้งาน API ผ่านเส้นทางที่กำหนดใน netlify.toml
+    fetch("https://eak022.github.io/databooks.github.io/db.json/db.json/book") // เรียกใช้งาน API ผ่านเส้นทางที่กำหนดใน netlify.toml
     .then((res) => res.json())
     .then((data) => {
       setBookData(data);
@@ -26,7 +26,7 @@ const BookList = () => {
 
   const removeBook = (id) => {
     if (window.confirm("Do you want to remove?")) {
-      fetch("https://eak022.github.io/data_json/db.json/book" + id, {
+      fetch("https://eak022.github.io/databooks.github.io/db.json/db.json/book" + id, {
         method: "DELETE",
       })
         .then((res) => {
