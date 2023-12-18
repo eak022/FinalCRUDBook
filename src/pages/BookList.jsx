@@ -7,13 +7,13 @@ const BookList = () => {
 
   useEffect(() => {
     fetch("https://raw.githubusercontent.com/eak022/DataBook/main/db.json/book") // เรียกใช้งาน API ผ่านเส้นทางที่กำหนดใน netlify.toml
-      .then((res) => res.json())
-      .then((response) => {
-        setBookData(response);
-      })
-      .catch((err) => {
-        console.log(err.message);
-      });
+    .then((res) => res.json())
+    .then((data) => {
+      setBookData(data);
+    })
+    .catch((err) => {
+      console.error(err);
+    });
   }, []);
 
   const loadEdit = (id) => {
