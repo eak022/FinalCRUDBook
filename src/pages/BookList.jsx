@@ -6,7 +6,7 @@ const BookList = () => {
   const navigate = useNavigate();
 
   useEffect(() => {
-    fetch("http://localhost:8000/book")
+    fetch("https://statuesque-fudge-a93190.netlify.app/book")
       .then((res) => res.json())
       .then((response) => {
         setBookData(response);
@@ -26,7 +26,7 @@ const BookList = () => {
 
   const removeBook = (id) => {
     if (window.confirm("Do you want to remove?")) {
-      fetch("http://localhost:8000/book/" + id, {
+      fetch("https://statuesque-fudge-a93190.netlify.app/book/" + id, {
         method: "DELETE",
       })
         .then((res) => {
