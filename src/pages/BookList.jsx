@@ -6,7 +6,7 @@ const BookList = () => {
   const navigate = useNavigate();
 
   useEffect(() => {
-    fetch("https://statuesque-fudge-a93190.netlify.app/book")
+    fetch("/api/book") // เรียกใช้งาน API ผ่านเส้นทางที่กำหนดใน netlify.toml
       .then((res) => res.json())
       .then((response) => {
         setBookData(response);
@@ -26,7 +26,7 @@ const BookList = () => {
 
   const removeBook = (id) => {
     if (window.confirm("Do you want to remove?")) {
-      fetch("https://statuesque-fudge-a93190.netlify.app/book/" + id, {
+      fetch("https:/api/book" + id, {
         method: "DELETE",
       })
         .then((res) => {
